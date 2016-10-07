@@ -44,6 +44,10 @@ module.exports = function (grunt) {
                 }
                 file += options.extension;
 
+                if (options.versionDirClassifier) {
+                    artifactVersion = artifactVersion + '-' + options.versionDirClassifier;
+                }
+
                 // Add the addition needed uri information depending user options
                 if (options.artifactId) {
                     uri = baseURI + options.artifactId + '/' + artifactVersion + '/' + file;
